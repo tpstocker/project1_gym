@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/members/{{member.id}}" method="post">
+    <div>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" value="{{member.first_name}}" name="first_name" required autofocus>
+    </div>
+    <div>
+        <label for="second_name">Second Name</label>
+        <input type="text" id="second_name" value="{{member.second_name}}" name="second_name" placeholder="second_name" required>
+    </div>
+    <div>
+        <label for="date_of_birth">Date of Birth</label>
+        <input type="text" id="date_of_birth" value="{{member.date_of_birth}}" name="date_of_birth" placeholder="date_of_birth" required>
+    </div>
+    <div>
+        <label for="contact_number">Contact Number</label>
+        <input type="text" id="contact_number" value="{{member.contact_number}}" name="contact_number" placeholder="contact_number" required>
+    </div>
+    <div>
+        <label for="email_address">Email Address</label>
+        <input type="text" id="email_address" value="{{member.email_address}}" name="email_address" placeholder="email_address" required>
+    </div>
+    <div>
+        <label for="experience">Experience Level</label>
+        <select name="experience" id="experience">
+            <option value="1" {% if member.experience == '1' %} selected="selected" {% endif %}>1</option>
+            <option value="2" {% if member.experience == '2' %} selected="selected" {% endif %}>2</option>
+            <option value="3" {% if member.experience == '3' %} selected="selected" {% endif %}>3</option>
+        </select>
+    </div>
+
+
+    <button type="submit">Submit Edit</button>
+</form>
+
+{% endblock %}

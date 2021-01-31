@@ -46,4 +46,7 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-##update task...##
+def update(member):
+    sql = "UPDATE members SET (membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [member.membership_level, member.experience, member.email_address, member.contact_number, member.date_of_birth, member.second_name, member.first_name]
+    run_sql(sql, values)

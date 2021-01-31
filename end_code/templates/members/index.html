@@ -1,14 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>Members</h1>
-
-
-
-  {% for member in members %}
-
-    <p> {{member.first_name}} {{member.second_name}}, {{member.id}}, {{member.contact_number}}</p>
-
-  {% endfor %}
-
+{% for member in all_members %}
+  <p>{{member.first_name}}, {{member.experience}}, {{member.id}}</p>
+{% endfor %}
 {% endblock %}
