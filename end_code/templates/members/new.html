@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/members" method="post">
+    <div>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" placeholder="First Name" required autofocus>
+    </div>
+    <div>
+        <label for="second_name">Second Name</label>
+        <input type="text" id="second_name" name="second_name" placeholder="Second Name" required>
+    </div>
+    <div>
+        <label for="date_of_birth">Date of Birth</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" placeholder="Date of Birth" required>
+    </div>
+    <div>
+        <label for="contact_number">Contact Number</label>
+        <input type="text" id="contact_number" name="contact_number" placeholder="Contact Number" required>
+    </div>
+    <div>
+        <label for="email_address">Email Address</label>
+        <input type="text" id="email_address" name="email_address" placeholder="Email" required>
+    </div>
+    <div>
+        <label for="experience">Experience Level</label>
+        <select name="experience" id="experience">
+            <option value="experience">1</option>
+            <option value="experience">2</option>
+            <option value="experience">3</option>
+        </select>
+    </div>
+    <div>
+        <label for="membership">Membership Level</label>
+        <select name="membership" id="membership">
+            <option value="membership">Silver</option>
+            <option value="membership">Gold</option>
+        </select>
+    </div>
+
+    <button type="submit">Add Member</button>
+</form>
+
+{% endblock %}
