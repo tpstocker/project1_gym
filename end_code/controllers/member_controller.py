@@ -28,7 +28,7 @@ def create_member():
     experience = request.form['experience']
     membership_level = request.form['membership_level']
     active_status = request.form['active_status']
-    member = Member(membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name)
+    member = Member(active_status, membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name)
     member_repository.save(member)
     return redirect('/members')
 
@@ -46,11 +46,27 @@ def edit_member(id):
     member = member_repository.select(id)
     return render_template('members/edit.html', member = member, all_members = members)
 
-# UPDATE active_status - PUT #
+# UPDATE - PUT #
 @members_blueprint.route("/members/<id>", methods=["POST"])
-def update_task(id):
+def update_member(id):
     active_status = request.form['active_status']
-    member = Member(active_status)
+    membership_level = request.form['membership_level']
+    experience = request.form['experience']
+    email_address = request.form['email_address']
+    contact_number = request.form['contact_number']
+    date_of_birth = request.form['date_of_birth']
+    second_name = request.form['second_name']
+    first_name = request.form['first_name']
+    member = Member(active_status, membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name, id)
     member_repository.update(member)
     return redirect('/members')
+
+
+
+
+
+
+
+
+
 

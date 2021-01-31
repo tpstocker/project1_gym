@@ -1,8 +1,23 @@
 {% extends "base.html" %}
-
 {% block content %}
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Membership Number</th>
+      <th>PHOTO HERE</th>
+    </tr>
 {% for member in all_members %}
-  <p>{{member.first_name}}, {{member.experience}}, {{member.id}}, {{member.membership_level}}</p>
-  <h1>active_status: {{member.active_status}}</h1>
+    <tr>
+      <th><a href="members/{{member.id}}">{{member.first_name}}  {{member.second_name}}</a></th>
+    </tr>
 {% endfor %}
+
+</table>
+
 {% endblock %}
+
+
+<!-- Think about adding a search function to find members quickly JS?-->
+<!-- Membership Number
+Photo -->

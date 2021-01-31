@@ -38,6 +38,13 @@
             <option value="gold" {% if member.membership_level == 'gold' %} selected="selected" {% endif %}>Gold</option>
         </select>
     </div>
+    <div>
+        <label for="active_status">Active Status</label>
+        <select name="active_status" id="active_status">
+            <option value="true" {% if member.active_status == 'true' %} selected="selected" {% endif %}>True</option>
+            <option value="false" {% if member.active_status == 'false' %} selected="selected" {% endif %}>False</option>
+        </select>  
+    </div>
 
 
     <button type="submit">Submit Edit</button>
