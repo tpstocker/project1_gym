@@ -29,3 +29,5 @@ def show(id):
 def new_member():
     members = member_repository.select_all()
     return render_template("members/new.html", all_members = members)
+
+    Hello 
