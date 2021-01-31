@@ -7,11 +7,8 @@ def save(member):
     results = run_sql(sql, values)
     id = results[0]['id']
     member.id = id
+    return member 
 
-
-def delete_all():
-    sql = "DELETE FROM members"
-    run_sql(sql)
 
 
 def select_all():
@@ -21,7 +18,32 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        member = member_repository.select(row['member_id'])
         member = Member(row['membership_level'], row['experience'], row['email_address'], row['contact_number'], row['date_of_birth'], row['second_name'], row['first_name'], row['id'])
         members.append(member)
     return members
+
+
+
+def select(id):
+    member = None
+    sql = "SELECT * FROM members WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        member = Member(result['membership_level'], result['experience'], result['email_address'], result['contact_number'], result['date_of_birth'], result['second_name'], result['first_name'], result['id'])
+    return member
+
+
+
+def delete_all():
+    sql = "DELETE FROM members"
+    run_sql(sql)
+
+
+def delete(id):
+    sql = "DELETE FROM members WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+##update task...##
