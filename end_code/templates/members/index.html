@@ -2,6 +2,7 @@
 
 {% block content %}
 {% for member in all_members %}
-  <p>{{member.first_name}}, {{member.experience}}, {{member.id}}</p>
+  <p>{{member.first_name}}, {{member.experience}}, {{member.id}}, {{member.membership_level}}</p>
+  <h1>active_status: {{member.active_status}}</h1>
 {% endfor %}
 {% endblock %}

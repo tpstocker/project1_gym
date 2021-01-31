@@ -13,7 +13,8 @@ CREATE TABLE members (
     contact_number VARCHAR(255),
     email_address VARCHAR(255),
     experience VARCHAR(255),
-    membership_level VARCHAR (255)
+    membership_level VARCHAR (255),
+    active_status BOOLEAN
 );
 
 CREATE TABLE activities (

@@ -25,64 +25,64 @@ member_repository.delete_all()
 
 ## MEMBERS ##
 
-member1 = Member('gold', '3', 'hansto@tmail.com', '07567654345', datetime.date(1989,12,22), 'Stocker', 'Hannah')
+member1 = Member('true', 'gold', '3', 'hansto@tmail.com', '07567654345', datetime.date(1989,12,22), 'Stocker', 'Hannah')
 member_repository.save(member1)
 
-member2 = Member('silver', '1', 'alice_loves_bones@ymail.com', '07548909645', datetime.date(1999,1,12), 'Marples', 'Alice')
+member2 = Member('true', 'silver', '1', 'alice_loves_bones@ymail.com', '07548909645', datetime.date(1999,1,12), 'Marples', 'Alice')
 member_repository.save(member2)
 
-member3 = Member('silver', '1', 'iamagoodboy@dogmail.co.uk', '07982233234', datetime.date(1976,5,2), 'Marples', 'Angus')
+member3 = Member('true', 'silver', '1', 'iamagoodboy@dogmail.co.uk', '07982233234', datetime.date(1976,5,2), 'Marples', 'Angus')
 member_repository.save(member3)
 
-member4 = Member('gold', '2', 'why_m@googlemail.co.uk', '07122112452', datetime.date(1962,2,4), 'Marples', 'Yvonne')
+member4 = Member('true', 'gold', '2', 'why_m@googlemail.co.uk', '07122112452', datetime.date(1962,2,4), 'Marples', 'Yvonne')
 member_repository.save(member4)
 
-member5 = Member('gold', '3', 'barry1976@tescomail.com', '07323543456', datetime.date(1976,9,19), 'McDonald', 'Barry')
+member5 = Member('true', 'gold', '3', 'barry1976@tescomail.com', '07323543456', datetime.date(1976,9,19), 'McDonald', 'Barry')
 member_repository.save(member5)
 
-member6 = Member('gold', '3', 'ewan123@hmail.com', '07998778761', datetime.date(1968,7,14), 'McDonald', 'Ewan')
+member6 = Member('true', 'gold', '3', 'ewan123@hmail.com', '07998778761', datetime.date(1968,7,14), 'McDonald', 'Ewan')
 member_repository.save(member6)
 
-member7 = Member('silver', '1', 'jimmyjimjim@jimmail.net', '07584267899', datetime.date(1948,8,2), 'McClure', 'Jim')
+member7 = Member('true', 'silver', '1', 'jimmyjimjim@jimmail.net', '07584267899', datetime.date(1948,8,2), 'McClure', 'Jim')
 member_repository.save(member7)
 
-member8 = Member('silver', '1', 'mags45664@jimmail.net', '07584267555', datetime.date(1949,3,9), 'McClure', 'Mags')
+member8 = Member('true', 'silver', '1', 'mags45664@jimmail.net', '07584267555', datetime.date(1949,3,9), 'McClure', 'Mags')
 member_repository.save(member8)
 
-member9 = Member('gold', '3', 'geoffbygrove@gmail.com', '07762345911', datetime.date(2002,12,6), 'Bygrove', 'Geoff')
+member9 = Member('true', 'gold', '3', 'geoffbygrove@gmail.com', '07762345911', datetime.date(2002,12,6), 'Bygrove', 'Geoff')
 member_repository.save(member9)
 
-member10 = Member('gold', '2', 'lozza_shap@gmail.com', '07212345678', datetime.date(2008,1,12), 'Shaply', 'Laura')
+member10 = Member('true', 'gold', '2', 'lozza_shap@gmail.com', '07212345678', datetime.date(2008,1,12), 'Shaply', 'Laura')
 member_repository.save(member10)
 
-member11 = Member('silver', '3', 'fergie_mcdergie@gmail.com', '07112343212', datetime.date(2005,11,2), 'MacDonald', 'Fern')
+member11 = Member('true', 'silver', '3', 'fergie_mcdergie@gmail.com', '07112343212', datetime.date(2005,11,2), 'MacDonald', 'Fern')
 member_repository.save(member11)
 
-member12 = Member('silver', '1', 'rossscott@hotmail.com', '07987556643', datetime.date(1985,10,11), 'Scott', 'Ross')
+member12 = Member('true', 'silver', '1', 'rossscott@hotmail.com', '07987556643', datetime.date(1985,10,11), 'Scott', 'Ross')
 member_repository.save(member12)
 
-member13 = Member('silver', '1', 'murraymint@gmail.com', '07221962309', datetime.date(1980,12,23), 'Brown', 'Murray')
+member13 = Member('true', 'silver', '1', 'murraymint@gmail.com', '07221962309', datetime.date(1980,12,23), 'Brown', 'Murray')
 member_repository.save(member13)
 
-member14 = Member('silver', '2', '565_tom@gmail.com', '07212445398', datetime.date(1998,6,30), 'Kerr', 'Tom')
+member14 = Member('true', 'silver', '2', '565_tom@gmail.com', '07212445398', datetime.date(1998,6,30), 'Kerr', 'Tom')
 member_repository.save(member14)
 
-member15 = Member('gold', '2', 'martinyounger@gmail.com', '01505685286', datetime.date(1988,11,10), 'Younger', 'Martin')
+member15 = Member('true', 'gold', '2', 'martinyounger@gmail.com', '01505685286', datetime.date(1988,11,10), 'Younger', 'Martin')
 member_repository.save(member15)
 
-member16 = Member('silver', '3', 'hunter55@hotmail.com', '07097679399', datetime.date(1955,4,17), 'Hunter', 'Kelly')
+member16 = Member('true', 'silver', '3', 'hunter55@hotmail.com', '07097679399', datetime.date(1955,4,17), 'Hunter', 'Kelly')
 member_repository.save(member16)
 
-member17 = Member('silver', '2', 'gordygrant@askjeeves.net', '03456779867', datetime.date(1957,3,2), 'Grant', 'Gordy')
+member17 = Member('true', 'silver', '2', 'gordygrant@askjeeves.net', '03456779867', datetime.date(1957,3,2), 'Grant', 'Gordy')
 member_repository.save(member17)
 
-member18 = Member('gold', '1', 'flammingflemming@house.gov', '07778443666', datetime.date(1999,1,27), 'Flemming', 'Dick')
+member18 = Member('true', 'gold', '1', 'flammingflemming@house.gov', '07778443666', datetime.date(1999,1,27), 'Flemming', 'Dick')
 member_repository.save(member18)
 
-member19 = Member('silver', '2', 'lucyinthesky@msn.com', '07898434666', datetime.date(1962,9,16), 'Donaldson', 'Lucy')
+member19 = Member('true', 'silver', '2', 'lucyinthesky@msn.com', '07898434666', datetime.date(1962,9,16), 'Donaldson', 'Lucy')
 member_repository.save(member19)
 
-member20 = Member('gold', '3', 'gibbo247@gfr.de.scot', '01505762543', datetime.date(1957,9,6), 'Gibson', 'Duncan')
+member20 = Member('true', 'gold', '3', 'gibbo247@gfr.de.scot', '01505762543', datetime.date(1957,9,6), 'Gibson', 'Duncan')
 member_repository.save(member20)
 
 

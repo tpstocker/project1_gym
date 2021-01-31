@@ -31,6 +31,13 @@
             <option value="3" {% if member.experience == '3' %} selected="selected" {% endif %}>3</option>
         </select>
     </div>
+    <div>
+        <label for="membership_level">Membership Level</label>
+        <select name="membership_level" id="membership_level">
+            <option value="silver" {% if member.membership_level == 'silver' %} selected="selected" {% endif %}>Silver</option>
+            <option value="gold" {% if member.membership_level == 'gold' %} selected="selected" {% endif %}>Gold</option>
+        </select>
+    </div>
 
 
     <button type="submit">Submit Edit</button>
