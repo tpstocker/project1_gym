@@ -12,8 +12,15 @@
         <input type="text" id="capacity" value="{{location.capacity}}" name="capacity" placeholder="capacity" required>
     </div>
     <div>
+        <label for="description">Description</label>
+        <input type="text" id="description" value="{{location.description}}" name="description" placeholder="description" required>
+    </div>
+    <div>
         <label for="accessible">Accessible</label>
-        <input type="text" id="accessible" value="{{location.accessible}}" name="accessible" placeholder="date_of_birth" required>
+        <select name="accessible" id="accessible">
+            <option value="true" {% if location.accessible == 'true' %} selected="selected" {% endif %}>True</option>
+            <option value="false" {% if location.accessible == 'false' %} selected="selected" {% endif %}>False</option>
+        </select>  
     </div>
 
 

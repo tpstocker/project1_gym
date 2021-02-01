@@ -29,7 +29,6 @@ CREATE TABLE instructors (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     second_name VARCHAR(255),
-    preferred_activity INT REFERENCES activities(id),
     contact_number VARCHAR(255)
 );
 

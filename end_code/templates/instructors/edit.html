@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/instructors/{{instructor.id}}" method="post">
+    <div>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" value="{{instructor.first_name}}" name="first_name" required autofocus>
+    </div>
+    <div>
+        <label for="second_name">Second Name</label>
+        <input type="text" id="second_name" value="{{instructor.second_name}}" name="second_name" placeholder="second_name" required>
+    </div>
+    <div>
+        <label for="contact_number">Contact Number</label>
+        <input type="text" id="contact_number" value="{{instructor.contact_number}}" name="contact_number" placeholder="contact_number" required>
+    </div>
+
+    <button type="submit">Submit Edit</button>
+</form>
+
+<form action="/instructors/{{instructor.id}}/delete">
+    <button type="submit">Delete Instructor</button>
+</form>
+
+
+{% endblock %}

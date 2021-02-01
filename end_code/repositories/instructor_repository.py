@@ -1,16 +1,51 @@
 from db.run_sql import run_sql
 from models.instructor import Instructor
-import repositories.activity_repository as activity_repository
-
 
 def save(instructor):
-    sql = "INSERT INTO instructors (contact_number, preferred_activity, second_name, first_name) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [instructor.contact_number, instructor.preferred_activity.id, instructor.second_name, instructor.first_name]
-    results = run_sql( sql, values )
-    instructor.id = results[0]['id']
+    sql = "INSERT INTO instructors (contact_number, second_name, first_name) VALUES (%s, %s, %s) RETURNING id"
+    values = [instructor.contact_number, instructor.second_name, instructor.first_name]
+    results = run_sql(sql, values)
+    id = results[0]['id']
+    instructor.id = id
+    return instructor
+
+
+def select_all():
+    instructors = []
+
+    sql = "SELECT * FROM instructors"
+    results = run_sql(sql)
+
+    for row in results:
+        instructor = Instructor(row['contact_number'], row['second_name'], row['first_name'], row['id'])
+        instructors.append(Instructor)
+    return instructors
+
+
+def select(id):
+    instructor = None
+    sql = "SELECT * FROM instructors WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        instructor = instructor(result['contact_number'], result['second_name'], result['first_name'], result['id'])
     return instructor
 
 
 def delete_all():
     sql = "DELETE FROM instructors"
     run_sql(sql)
+
+
+
+def update(instructor):
+    sql = "UPDATE instructors SET (contact_number, second_name, first_name) = (%s, %s, %s) WHERE id = %s"
+    values = [instructor.contact_number, instructor.second_name, instructor.first_name, instructor.id]
+    run_sql(sql, values)
+
+
+def delete(id):
+    sql = "DELETE FROM instructors WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

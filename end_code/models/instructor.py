@@ -1,8 +1,7 @@
 class Instructor:
 
-    def __init__(self, first_name, second_name, preferred_activity, contact_number, id = None):
-        self.first_name = first_name
-        self.second_name = second_name
-        self.preferred_activity = preferred_activity
+    def __init__(self, contact_number, second_name, first_name, id = None):
         self.contact_number = contact_number
+        self.second_name = second_name
+        self.first_name = first_name
         self.id = id

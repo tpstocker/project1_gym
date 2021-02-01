@@ -1,6 +1,6 @@
 class Location:
 
-    def __init__(self, accessible, capacity, description, name, id = None):
+    def __init__(self, name, description, capacity, accessible, id = None):
         self.name = name
         self.description = description
         self.capacity = capacity

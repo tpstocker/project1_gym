@@ -3,14 +3,14 @@ import datetime
 #imports python debugger.
 
 from models.activity import Activity
-from models.booking import Booking
+# from models.booking import Booking
 from models.instructor import Instructor
 from models.location import Location
 from models.member import Member
 #import models.
 
 import repositories.activity_repository as activity_repository
-import repositories.booking_repository as booking_repository
+# import repositories.booking_repository as booking_repository
 import repositories.instructor_repository as instructor_repository
 import repositories.location_repository as location_repository
 import repositories.member_repository as member_repository
@@ -18,8 +18,8 @@ import repositories.member_repository as member_repository
 
 activity_repository.delete_all()
 # booking_repository.delete_all()
-# instructor_repository.delete_all()
-# location_repository.delete_all()
+instructor_repository.delete_all()
+location_repository.delete_all()
 member_repository.delete_all()
 #removes the repos from the db when script is run.
 
@@ -187,25 +187,25 @@ activity_repository.save(activity26)
 
 ## INSTRUCTORS ##
 
-instructor1 = Instructor('Wayne', 'Buttler', activity26, 'x4567')
+instructor1 = Instructor('Wayne', 'Buttler', 'x4567')
 instructor_repository.save(instructor1)
 
-instructor2 = Instructor('Katy', 'Robertson', activity7, 'x4544')
+instructor2 = Instructor('Katy', 'Robertson', 'x4544')
 instructor_repository.save(instructor2)
 
-instructor3 = Instructor('Derek', 'Oliver', activity1, 'x4599')
+instructor3 = Instructor('Derek', 'Oliver', 'x4599')
 instructor_repository.save(instructor3)
 
-instructor4 = Instructor('Sophia', 'Price', activity18, 'x4521')
+instructor4 = Instructor('Sophia', 'Price', 'x4521')
 instructor_repository.save(instructor4)
 
-instructor5 = Instructor('Liam', 'Harris', activity16, 'x4502')
+instructor5 = Instructor('Liam', 'Harris', 'x4502')
 instructor_repository.save(instructor5)
 
 
 ## LOCATIONS ##
 
-location1 = Location('Main Hall', 'General use including Bootcamp, Yoga, Pilates and Zumba.', 100, True)
+location1 = Location('Main Hall', 'General use including Bootcamp, Yoga, Pilates and Zumba.', '100', 'True')
 location_repository.save(location1)
 
 location2 = Location('LG1', 'Light equipment use including Circuit Trainig, HIIT and Kettlebells' , 20, False)
@@ -229,11 +229,11 @@ location_repository.save(location7)
 
 ## BOOKINGS ##
 
-booking1 = Booking(member2, activity21, instructor5, location7)
-booking_repository.save(booking1)
+# booking1 = Booking(member2, activity21, instructor5, location7)
+# booking_repository.save(booking1)
 
-booking2 = Booking(member20, activity21, instructor2, location1)
-booking_repository.save(booking2)
+# booking2 = Booking(member20, activity21, instructor2, location1)
+# booking_repository.save(booking2)
 
-booking3 = Booking(member14, activity13, instructor1, location5)
-booking_repository.save(booking3)
+# booking3 = Booking(member14, activity13, instructor1, location5)
+# booking_repository.save(booking3)

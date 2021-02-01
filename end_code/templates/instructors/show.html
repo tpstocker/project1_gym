@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <p>Name: {{instructor.first_name}}  {{instructor.second_name}}</p>
+        <p>Contact Number: {{instructor.contact_number}}</p>
+
+        <form action="/instructors/{{instructor.id}}/edit">
+            <button type="submit">Edit</button>
+        </form>
+
+{% endblock %}
