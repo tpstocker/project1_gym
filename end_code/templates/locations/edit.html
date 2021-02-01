@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/locations/{{location.id}}" method="post">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" value="{{location.name}}" name="name" required autofocus>
+    </div>
+    <div>
+        <label for="capacity">Capacity</label>
+        <input type="text" id="capacity" value="{{location.capacity}}" name="capacity" placeholder="capacity" required>
+    </div>
+    <div>
+        <label for="accessible">Accessible</label>
+        <input type="text" id="accessible" value="{{location.accessible}}" name="accessible" placeholder="date_of_birth" required>
+    </div>
+
+
+    <button type="submit">Submit Edit</button>
+</form>
+
+<form action="/locations/{{location.id}}/delete">
+    <button type="submit">Delete Location</button>
+</form>
+
+
+{% endblock %}

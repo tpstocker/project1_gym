@@ -4,7 +4,7 @@ from models.activity import Activity
 
 def save(activity):
     sql = "INSERT INTO activities (experience_level, duration, description, name) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = []
+    values = [activity.experience_level, activity.duration, activity.description, activity.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     activity.id = id

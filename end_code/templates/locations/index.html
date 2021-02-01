@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Capacity</th>
+      <th>Map HERE</th>
+    </tr>
+{% for location in all_locations %}
+    <tr>
+      <th><a href="locations/{{location.id}}">{{location.name}}</a></th>
+    </tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

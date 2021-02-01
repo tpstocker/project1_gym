@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/locations" method="post">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+    </div>
+
+    <div>
+        <label for="capacity">Capacity</label>
+        <input type="date" id="capacity" name="capacity" placeholder="Capacity" required>
+    </div>
+    <div>
+        <label for="accessible">Accessible</label>
+        <input type="text" id="accessible" name="accessible" placeholder="Accessible" required>
+    </div>
+
+    <button type="submit">Add Location</button>
+</form>
+
+{% endblock %}

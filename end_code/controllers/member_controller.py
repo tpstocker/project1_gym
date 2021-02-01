@@ -57,6 +57,7 @@ def update_member(id):
     date_of_birth = request.form['date_of_birth']
     second_name = request.form['second_name']
     first_name = request.form['first_name']
+    
     member = Member(active_status, membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name, id)
     member_repository.update(member)
     return redirect('/members')

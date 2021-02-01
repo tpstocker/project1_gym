@@ -46,9 +46,11 @@ def edit_activity(id):
 # UPDATE ACTIVITY - PUT #
 @activities_blueprint.route("/activities/<id>", methods=["POST"])
 def update_activity(id):
-    name = request.form['name']
-    description = request.form['description']
+    experience_level = request.form['experience_level']
     duration = request.form['duration']
+    description = request.form['description']
+    name = request.form['name']
+
     activity = Activity(experience_level, duration, description, name, id)
     activity_repository.update(activity)
     return redirect('/activities')
