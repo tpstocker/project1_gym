@@ -6,10 +6,12 @@
         <p>Contact Number: {{member.contact_number}}</p>
         <p>Email: {{member.email_address}}</p>
         <p>Experience: {{member.experience}}</p>
+        <p>Membership Level: {{member.membership_level}}</p>
         <p>Active Status: {{member.active_status}}</p>
 
 
-        <p><a href="/members/{{member.id}}/edit">Edit</a></p>
-    </div>
+        <form action="/members/{{member.id}}/edit">
+            <button type="submit">Edit</button>
+        </form>
 
 {% endblock %}

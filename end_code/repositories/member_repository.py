@@ -41,12 +41,13 @@ def delete_all():
     run_sql(sql)
 
 
+def update(member):
+    sql = "UPDATE members SET (active_status, membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [member.active_status, member.membership_level, member.experience, member.email_address, member.contact_number, member.date_of_birth, member.second_name, member.first_name, member.id]
+    run_sql(sql, values)
+
+
 def delete(id):
     sql = "DELETE FROM members WHERE id = %s"
     values = [id]
-    run_sql(sql, values)
-
-def update(member):
-    sql = "UPDATE members SET (active_status, membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [member.active_status, member.membership_level, member.experience, member.email_address, member.contact_number, member.date_of_birth, member.second_name, member.first_name, member.id]
     run_sql(sql, values)
