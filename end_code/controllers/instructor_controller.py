@@ -11,7 +11,6 @@ def instructors():
     instructors = instructor_repository.select_all()
     return render_template("instructors/index.html", all_instructors = instructors)
 
-
 # NEW instructor - GET # 
 @instructors_blueprint.route("/instructors/new", methods=['GET'])
 def new_instructor():
@@ -24,7 +23,8 @@ def create_instructor():
     first_name = request.form['first_name']
     second_name = request.form['second_name']
     contact_number = request.form['contact_number']
-    instructor = instructor(contact_number, second_name, first_name)
+
+    instructor = Instructor(contact_number, second_name, first_name)
     instructor_repository.save(instructor)
     return redirect('/instructors')
 
@@ -42,15 +42,14 @@ def edit_instructor(id):
     instructor = instructor_repository.select(id)
     return render_template('instructors/edit.html', instructor = instructor, all_instructors = instructors)
 
-
-
-# UPDATE - PUT #
+# UPDATE - PUT # ####look at this if theres a problem###
 @instructors_blueprint.route("/instructors/<id>", methods=["POST"])
 def update_instructor(id):
-    contact_number = request.form['contact_number']
-    second_name = request.form['second_name']
     first_name = request.form['first_name']
-    instructor = instructor(contact_number, second_name, first_name, id)
+    second_name = request.form['second_name']
+    contact_number = request.form['contact_number']
+    
+    instructor = Instructor(contact_number, second_name, first_name, id)
     instructor_repository.update(instructor)
     return redirect('/instructors')
 
@@ -61,4 +60,6 @@ def update_instructor(id):
 def delete_instructor(id):
     instructor_repository.delete(id)
     return redirect('/instructors')
+
+
 

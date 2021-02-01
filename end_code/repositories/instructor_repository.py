@@ -10,6 +10,7 @@ def save(instructor):
     return instructor
 
 
+
 def select_all():
     instructors = []
 
@@ -18,8 +19,9 @@ def select_all():
 
     for row in results:
         instructor = Instructor(row['contact_number'], row['second_name'], row['first_name'], row['id'])
-        instructors.append(Instructor)
+        instructors.append(instructor)
     return instructors
+
 
 
 def select(id):
@@ -29,14 +31,14 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        instructor = instructor(result['contact_number'], result['second_name'], result['first_name'], result['id'])
+        instructor = Instructor(result['contact_number'], result['second_name'], result['first_name'], result['id'])
     return instructor
+
 
 
 def delete_all():
     sql = "DELETE FROM instructors"
     run_sql(sql)
-
 
 
 def update(instructor):
