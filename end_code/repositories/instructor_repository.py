@@ -2,7 +2,7 @@ from db.run_sql import run_sql
 from models.instructor import Instructor
 
 def save(instructor):
-    sql = "INSERT INTO instructors (contact_number, second_name, first_name) VALUES (%s, %s, %s) RETURNING id"
+    sql = "INSERT INTO instructors (first_name, second_name, contact_number) VALUES (%s, %s, %s) RETURNING id"
     values = [instructor.contact_number, instructor.second_name, instructor.first_name]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        instructor = Instructor(row['contact_number'], row['second_name'], row['first_name'], row['id'])
+        instructor = Instructor(row['first_name'], row['second_name'], row['contact_number'], row['id'])
         instructors.append(instructor)
     return instructors
 
@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        instructor = Instructor(result['contact_number'], result['second_name'], result['first_name'], result['id'])
+        instructor = Instructor(result['first_name'], result['second_name'], result['contact_number'], result['id'])
     return instructor
 
 
@@ -42,7 +42,7 @@ def delete_all():
 
 
 def update(instructor):
-    sql = "UPDATE instructors SET (contact_number, second_name, first_name) = (%s, %s, %s) WHERE id = %s"
+    sql = "UPDATE instructors SET (first_name, second_name, contact_number) = (%s, %s, %s) WHERE id = %s"
     values = [instructor.contact_number, instructor.second_name, instructor.first_name, instructor.id]
     run_sql(sql, values)
 

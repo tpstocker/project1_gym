@@ -4,7 +4,7 @@ from models.location import Location
 
 def save(location):
     sql = "INSERT INTO locations (accessible, capacity, description, name) VALUES (%s, %s, %s, %s) RETURNING id"
-    values = [location.accessible, location.capacity, location.description, location.name]
+    values = [location.name, location.description, location.capacity, location.accessible]
     results = run_sql(sql, values)
     id = results[0]['id']
     location.id = id
@@ -18,7 +18,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        location = Location(row['accessible'], row['capacity'], row['description'], row['name'], row['id'])
+        location = Location(row['name'], row['description'], row['capacity'], row['accessible'], row['id'])
         locations.append(location)
     return locations
 
@@ -30,7 +30,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        location = Location(result['accessible'], result['capacity'], result['description'], result['name'], result['id'])
+        location = Location(result['name'], result['description'], result['capacity'], result['accessible'], result['id'])
     return location
 
 
@@ -40,8 +40,8 @@ def delete_all():
 
 
 def update(location):
-    sql = "UPDATE locations SET (accessible, capacity, name) = (%s, %s, %s) WHERE id = %s"
-    values = [location.accessible, location.capacity, location.name, location.id]
+    sql = "UPDATE locations SET (accessible, capacity, description, name) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [location.name, location.description, location.capacity, location.accessible, location.id]
     run_sql(sql, values)
 
 
