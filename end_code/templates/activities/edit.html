@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/activities/{{activity.id}}" method="post">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" value="{{activity.name}}" name="name" required autofocus>
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input type="text" id="description" value="{{activity.description}}" name="description" placeholder="second_name" required>
+    </div>
+    <div>
+        <label for="duration">Duration</label>
+        <input type="text" id="duration" value="{{activity.duration}}" name="duration" placeholder="duration" required>
+    </div>
+    <div>
+        <label for="experience_level">Experience Level</label>
+        <select name="experience_level" id="experience_level">
+            <option value="1" {% if activity.experience_level == '1' %} selected="selected" {% endif %}>1</option>
+            <option value="2" {% if activity.experience_level == '2' %} selected="selected" {% endif %}>2</option>
+            <option value="3" {% if activity.experience_level == '3' %} selected="selected" {% endif %}>3</option>
+        </select>
+    </div>
+    
+
+    <button type="submit">Submit Edit</button>
+</form>
+
+<form action="/activities/{{activity.id}}/delete">
+    <button type="submit">Delete Activity</button>
+</form>
+
+{% endblock %}

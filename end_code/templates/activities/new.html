@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/activities" method="post">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input type="date" id="description" name="description" placeholder="Description" required>
+    </div>
+    <div>
+        <label for="duration">Duration</label>
+        <input type="text" id="duration" name="duration" placeholder="Duration" required>
+    </div>
+    <div>
+        <label for="experience_level">Experience Level</label>
+        <select name="experience_level" id="experience_level">
+            <option value="experience_level">1</option>
+            <option value="experience_level">2</option>
+            <option value="experience_level">3</option>
+        </select>
+    </div>
+    
+    <button type="submit">Add Member</button>
+</form>
+
+{% endblock %}

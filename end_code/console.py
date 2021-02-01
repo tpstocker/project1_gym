@@ -28,7 +28,7 @@ member_repository.delete_all()
 member1 = Member('true', 'gold', '3', 'hansto@tmail.com', '07567654345', datetime.date(1989,12,22), 'Stocker', 'Hannah')
 member_repository.save(member1)
 
-member2 = Member('true', 'silver', '1', 'alice_loves_bones@ymail.com', '07548909645', datetime.date(1999,1,12), 'Marples', 'Alice')
+member2 = Member('true', 'gold', '2', 'maryberry46@hotamil.com', '07332345097', datetime.date(1946,4,21), 'Berry', 'Mary')
 member_repository.save(member2)
 
 member3 = Member('true', 'silver', '1', 'iamagoodboy@dogmail.co.uk', '07982233234', datetime.date(1976,5,2), 'Marples', 'Angus')

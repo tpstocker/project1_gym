@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <p>Name: {{activity.name}}</p>
+        <p>Description: {{activity.description}}</p>
+        <p>Duration: {{activity.duration}}</p>
+        <p>Experience Level: {{activity.experience_level}}</p>
+
+        <form action="/activities/{{activity.id}}/edit">
+            <button type="submit">Edit</button>
+        </form>
+
+{% endblock %}
