@@ -4,14 +4,17 @@
 
 {% for booking in bookings %}
 
-<p>Member Name: {{booking.member.first_name}} {{booking.member.second_name}}</p>
-<p>Instructor Name: {{booking.instructor.first_name}} {{booking.instructor.second_name}}</p>
-<p>Location: {{booking.location.name}}</p>
+<a href="bookings/{{booking.id}}"><h1>Booking ID: {{booking.id}}</h1></a>
+    <p>Member Name: {{booking.member.first_name}} {{booking.member.second_name}}</p>
+    <p>Activity: {{booking.activity.name}}</p>
+    <p>Instructor Name: {{booking.instructor.first_name}} {{booking.instructor.second_name}}</p>
+    <p>Location: {{booking.location.name}}</p>
 
 {% endfor %}
 
 
 
 <h2><a href="/bookings/new">New booking</a></h2>
+<h2><a href="/bookings/edit">edit</a></h2>
 
 {% endblock %}

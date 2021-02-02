@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/bookings/{{booking.id}}/delete">
+    <button type="submit">Delete Booking</button>
+</form>
+
+{% endblock %}

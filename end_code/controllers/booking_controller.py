@@ -29,11 +29,6 @@ def new_activity():
 # CREATE
 @bookings_blueprint.route("/bookings/new", methods=["POST"])
 def create_booking():
-    # member = request.form["member"]
-    # activity = request.form["activity"]
-    # instructor = request.form["instructor"]
-    # location = request.form["location"]
-
     new_member = member_repository.select(request.form["member"])
     new_activity = activity_repository.select(request.form["activity"])
     new_instructor = instructor_repository.select(request.form["instructor"])
@@ -45,37 +40,35 @@ def create_booking():
 
 
 # EDIT
-@bookings_blueprint.route("/bookings/<id>/edit")
+@bookings_blueprint.route("/bookings/<id>/edit", methods=["GET"])
 def edit_booking(id):
     booking = booking_repository.select(id)
-    members = member_repository.select_all()
-    activities = activity_repository.select_all()
-    instructors = instructor_repository.select_all()
-    locations = location_repository.select_all()
+    member = member_repository.select_all()
+    activity = activity_repository.select_all()
+    instructor = instructor_repository.select_all()
+    location = location_repository.select_all()
 
     return render_template('bookings/edit.html', booking=booking, all_bookings = bookings, members=members, activities=activities, instructors=instructors, locations=locations)
 
 
 # UPDATE
-@bookings_blueprint.route("/bookings/<id>", methods=["POST"])
+@bookings_blueprint.route("/bookings/<id>", methods=["GET"])
 def update_booking(id):
-    member_id = request.form["member_id"]
-    activity_id = request.form["activity_id"]
-    instructor_id = request.form["instructor_id"]
-    location_id = request.form["location_id"]
+    edit_member = member_repository.select(request.form["member"])
+    edit_activity = activity_repository.select(request.form["activity"])
+    edit_instructor = instructor_repository.select(request.form["instructor"])
+    edit_location = location_repository.select(request.form["location"])
 
-    member = member_repository.select(member_id)
-    activity = activity_repository.select(activity_id)
-    instructor = instructor_repository.select(instructor_id)
-    location = location_repository.select(location_id)
-
-    booking = booking(member, activity, instructor, location, id)
-    booking_repository.update(booking)
+    edit_booking = Booking(edit_member, edit_activity, edit_instructor, edit_location)
+    booking_repository.save(edit_booking)
     return redirect("/bookings")
 
 
+
+
+
 # DELETE
-@bookings_blueprint.route("/bookings/<id>/delete", methods=["POST"])
+@bookings_blueprint.route("/bookings/<id>/delete", methods=["GET"])
 def delete_booking(id):
     booking_repository.delete(id)
     return redirect("/bookings")

@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <form action="/bookings/new" method="post">
     <select id="member" name="member">
         {% for member in members %}
@@ -23,12 +27,9 @@
     </select>
 
 
-
-
-
-    
-
     <input type="submit" value="Add Booking"/>
 
 
 </form>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('/static/images/main.jpg');
+    background-size:100%;
+    background-repeat: repeat;
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu {
+    text-align: left;
+    padding-right: 40px;
+    list-style: none;
+    color: #525252;
+}
+
+#welcome_title {
+    color: #525252;
+    text-align: right;
+    padding-right: 5%;
+    font-size: 100%;
+}
+
+#intro_choice {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#intro_choice li {
+    padding: 5%;
+    font-size: 1.5em;
+    color: #525252;
+    text-decoration: none;
+}
+
+a:link, a:visited, a:active {
+    color: #525252;
+    text-decoration: none;
+}
+
+#intro_choice li a:hover {
+    color: #525252;
+    font-size: larger;
+}
+
