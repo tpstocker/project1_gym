@@ -19,6 +19,8 @@ def save(booking):
     booking.id = id
 
 
+
+
 def select_all():
     bookings = []
     sql = "SELECT * FROM bookings"

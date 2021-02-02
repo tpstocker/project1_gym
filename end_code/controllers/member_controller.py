@@ -28,6 +28,7 @@ def create_member():
     experience = request.form['experience']
     membership_level = request.form['membership_level']
     active_status = request.form['active_status']
+    
     member = Member(active_status, membership_level, experience, email_address, contact_number, date_of_birth, second_name, first_name)
     member_repository.save(member)
     return redirect('/members')

@@ -2,14 +2,16 @@
 {% block content %}
 
 
-{% for booking in all_bookings %}
+{% for booking in bookings %}
 
-<p><a href="bookings/{{booking.id}}">{{booking.member}} {{booking.activity}}</a></p>
+<p>Member Name: {{booking.member.first_name}} {{booking.member.second_name}}</p>
+<p>Instructor Name: {{booking.instructor.first_name}} {{booking.instructor.second_name}}</p>
+<p>Location: {{booking.location.name}}</p>
 
 {% endfor %}
 
 
 
-<h2><a href="/bookings/new">New Booking</a></h2>
+<h2><a href="/bookings/new">New booking</a></h2>
 
 {% endblock %}

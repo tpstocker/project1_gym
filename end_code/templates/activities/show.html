@@ -10,4 +10,11 @@
             <button type="submit">Edit</button>
         </form>
 
+        <h3>members with Booking</h3>
+        <ul>
+            {% for member_with_booking in members_with_booking %}
+            <li>{{ members_with_booking}}</li>
+            {% endfor %}
+        </ul>
+
 {% endblock %}

@@ -10,27 +10,36 @@ import repositories.location_repository as location_repository
 bookings_blueprint = Blueprint("bookings", __name__)
 
 
-# INDEX
 @bookings_blueprint.route("/bookings")
 def bookings():
     bookings = booking_repository.select_all()
-    return render_template("bookings/index.html", bookings=bookings)
+    return render_template("bookings/index.html", bookings = bookings)
+
+
+# NEW BOOKING - GET # 
+@bookings_blueprint.route("/bookings/new", methods=['GET'])
+def new_activity():
+    members = member_repository.select_all()
+    activities = activity_repository.select_all()
+    instructors = instructor_repository.select_all()
+    locations = location_repository.select_all()
+    return render_template("bookings/new.html", members=members, activities=activities, instructors=instructors, locations=locations)
 
 
 # CREATE
-@bookings_blueprint.route("/bookings", methods=["POST"])
+@bookings_blueprint.route("/bookings/new", methods=["POST"])
 def create_booking():
-    member_id = request.form["member_id"]
-    activity_id = request.form["activity_id"]
-    instructor_id = request.form["instructor_id"]
-    location_id = request.form["location_id"]
+    # member = request.form["member"]
+    # activity = request.form["activity"]
+    # instructor = request.form["instructor"]
+    # location = request.form["location"]
 
-    member = member_repository.select(member_id)
-    activity = activity_repository.select(activity_id)
-    instructor = instructor_repository.select(instructor_id)
-    location = location_repository.select(location_id)
+    new_member = member_repository.select(request.form["member"])
+    new_activity = activity_repository.select(request.form["activity"])
+    new_instructor = instructor_repository.select(request.form["instructor"])
+    new_location = location_repository.select(request.form["location"])
 
-    new_bookingg = Booking(member, activity, instructor, location)
+    new_booking = Booking(new_member, new_activity, new_instructor, new_location)
     booking_repository.save(new_booking)
     return redirect("/bookings")
 
@@ -44,7 +53,7 @@ def edit_booking(id):
     instructors = instructor_repository.select_all()
     locations = location_repository.select_all()
 
-    return render_template('bookings/edit.html', booking=booking, members=members, activities=activities, instructors=instructors, locations=locations)
+    return render_template('bookings/edit.html', booking=booking, all_bookings = bookings, members=members, activities=activities, instructors=instructors, locations=locations)
 
 
 # UPDATE

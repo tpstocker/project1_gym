@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <p>Name: {{booking.activity_id}}
+
+        <form action="/bookings/{{booking.id}}/edit">
+            <button type="submit">Edit</button>
+        </form>
+
+{% endblock %}

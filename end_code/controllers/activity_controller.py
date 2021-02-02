@@ -33,8 +33,9 @@ def create_activity():
 # SHOW ACTIVITIES - GET #
 @activities_blueprint.route("/activities/<id>", methods=['GET'])
 def show_activity(id):
+    members_with_booking = activity_repository.select_members_with_booking(id)
     activity = activity_repository.select(id)
-    return render_template('activities/show.html', activity = activity)
+    return render_template('activities/show.html', members_with_booking = members_with_booking, activity = activity)
 
 
 # EDIT ACTIVITY - GET #
