@@ -45,9 +45,9 @@ def edit_instructor(id):
 # UPDATE - PUT # ####look at this if theres a problem###
 @instructors_blueprint.route("/instructors/<id>", methods=["POST"])
 def update_instructor(id):
-    first_name = request.form['first_name']
-    second_name = request.form['second_name']
     contact_number = request.form['contact_number']
+    second_name = request.form['second_name']
+    first_name = request.form['first_name']
     
     instructor = Instructor(contact_number, second_name, first_name, id)
     instructor_repository.update(instructor)

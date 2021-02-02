@@ -188,19 +188,19 @@ activity_repository.save(activity26)
 
 ## INSTRUCTORS ##
 
-instructor1 = Instructor('Wayne', 'Buttler', 'x4567')
+instructor1 = Instructor('x4567', 'Butler', 'Wayne')
 instructor_repository.save(instructor1)
 
-instructor2 = Instructor('Katy', 'Robertson', 'x4544')
+instructor2 = Instructor('x4544', 'Robertson', 'Katy')
 instructor_repository.save(instructor2)
 
-instructor3 = Instructor('Derek', 'Oliver', 'x4599')
+instructor3 = Instructor('x4599', 'Oliver', 'Derek')
 instructor_repository.save(instructor3)
 
-instructor4 = Instructor('Sophia', 'Price', 'x4521')
+instructor4 = Instructor('x4521', 'Price', 'Sophia')
 instructor_repository.save(instructor4)
 
-instructor5 = Instructor('Liam', 'Harris', 'x4502')
+instructor5 = Instructor('x4502', 'Harris', 'Liam')
 instructor_repository.save(instructor5)
 
 
