@@ -3,21 +3,22 @@ import datetime
 #imports python debugger.
 
 from models.activity import Activity
-# from models.booking import Booking
+from models.booking import Booking
 from models.instructor import Instructor
 from models.location import Location
 from models.member import Member
+
 #import models.
 
 import repositories.activity_repository as activity_repository
-# import repositories.booking_repository as booking_repository
+import repositories.booking_repository as booking_repository
 import repositories.instructor_repository as instructor_repository
 import repositories.location_repository as location_repository
 import repositories.member_repository as member_repository
 #import repos.
 
 activity_repository.delete_all()
-# booking_repository.delete_all()
+booking_repository.delete_all()
 instructor_repository.delete_all()
 location_repository.delete_all()
 member_repository.delete_all()
@@ -205,35 +206,35 @@ instructor_repository.save(instructor5)
 
 ## LOCATIONS ##
 
-location1 = Location('Main Hall', 'General use including Bootcamp, Yoga, Pilates and Zumba.', '100', 'True')
+location1 = Location(True, 100, 'For general use including Pilates, Zumba and Yoga', 'Main Hall')
 location_repository.save(location1)
 
-location2 = Location('LG1', 'Light equipment use including Circuit Trainig, HIIT and Kettlebells' , 20, False)
+location2 = Location(False, 20, 'Light equipment use including Circuit Trainig, HIIT and Kettlebells', 'LG1')
 location_repository.save(location2)
 
-location3 = Location('Ring', 'Boxing Ring for Kickboxing etc.', 10, False)
+location3 = Location(False, 10, 'Boxing Ring for Kickboxing etc.', 'Ring')
 location_repository.save(location3)
 
-location4 = Location('G3', 'Spinning Equipment', 25, True)
+location4 = Location(True, 25, 'Spinning Equipment', 'G3')
 location_repository.save(location4)
 
-location5 = Location('G4', 'Spinning Equipment', 15, True)
+location5 = Location(True, 15, 'Spinning Equipment', 'G5')
 location_repository.save(location5)
 
-location6 = Location('Main Gym', 'The main gym including all gym equipment', 150, True)
+location6 = Location(True, 150, 'The main gym including all gym equipment', 'Main Gym')
 location_repository.save(location6)
 
-location7 = Location('Anex', 'General use including Bootcamp, Yoga, Pilates and Zumba.', 50, False)
+location7 = Location(False, 50, 'General use including Bootcamp, Yoga, Pilates and Zumba.', 'Anex')
 location_repository.save(location7)
 
 
 ## BOOKINGS ##
 
-# booking1 = Booking(member2, activity21, instructor5, location7)
-# booking_repository.save(booking1)
+booking1 = Booking(member2, activity21, instructor5, location7)
+booking_repository.save(booking1)
 
-# booking2 = Booking(member20, activity21, instructor2, location1)
-# booking_repository.save(booking2)
+booking2 = Booking(member20, activity21, instructor2, location1)
+booking_repository.save(booking2)
 
-# booking3 = Booking(member14, activity13, instructor1, location5)
-# booking_repository.save(booking3)
+booking3 = Booking(member14, activity13, instructor1, location5)
+booking_repository.save(booking3)

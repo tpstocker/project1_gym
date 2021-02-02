@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for booking in all_bookings %}
+
+<p><a href="bookings/{{booking.id}}">{{booking.member}} {{booking.activity}}</a></p>
+
+{% endfor %}
+
+
+
+<h2><a href="/bookings/new">New Booking</a></h2>
+
+{% endblock %}

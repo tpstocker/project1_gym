@@ -42,8 +42,8 @@ CREATE TABLE locations (
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
-    member_id INT REFERENCES members(id),
-    activity_id INT REFERENCES activities(id),
+    location_id INT REFERENCES locations(id), 
     instructor_id INT REFERENCES instructors(id),
-    location_id INT REFERENCES locations(id)  
+    activity_id INT REFERENCES activities(id),
+    member_id INT REFERENCES members(id)
 );

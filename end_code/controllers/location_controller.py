@@ -48,10 +48,10 @@ def edit_location(id):
 # UPDATE LOCATION - PUT #
 @locations_blueprint.route("/locations/<id>", methods=["POST"])
 def update_location(id):
-    name = request.form['name']
-    description = request.form['description']
-    capacity = request.form['capacity']
-    accessible = request.form['accessible']
+    name = request.form['accessible']
+    description = request.form['capacity']
+    capacity = request.form['description']
+    accessible = request.form['name']
     
     location = Location(accessible, capacity, description, name, id)
     location_repository.update(location)
