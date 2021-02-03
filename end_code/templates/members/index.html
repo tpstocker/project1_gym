@@ -1,21 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Membership Number</th>
-      <th>PHOTO HERE</th>
-    </tr>
-{% for member in all_members %}
-    <tr>
-      <th><a href="members/{{member.id}}">{{member.first_name}}  {{member.second_name}}</a></th>
-    </tr>
-{% endfor %}
-
-</table>
-
-<h2><a href="/members/new">New Member</a></h2>
+<div>
+  <h2 id="new_member"><a href="/members/new">New Member</a></h2>
+</div>
+<h1 id="member_title">Members</h1>
+<div id="overflow">
+  <div id="member_container">
+    {% for member in all_members %}
+      <p><a href="members/{{member.id}}">{{member.first_name}}  {{member.second_name}}</a></p>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
 

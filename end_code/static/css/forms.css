@@ -1,0 +1,43 @@
+input[type="text"] {
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    background: whitesmoke;
+    font-size: 1em;
+    padding: 5px 5px 5px 5px;
+    margin: 10px 0;
+  }
+
+  label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    padding-right: 10px;
+  }
+  
+  select {
+   width: 90px;
+   padding: 5px 5px 5px 5px;
+   margin: 10px 0;
+   font-size: 1em;
+   background: whitesmoke;
+   font-family: 'Montserrat', sans-serif;
+   border: 1px solid #eee;
+   display:inline;
+  } 
+
+  textarea {
+      width: 200px;
+      margin: 15px 0;
+      font-size: 2em;
+      background: whitesmoke;
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #eee;
+      display: block;
+  }
+
+input[type="date"] {
+
+    font-family: 'Montserrat', sans-serif;
+    background: whitesmoke;
+    padding: 5px 5px 5px 5px;
+    margin: 10px 0;
+  }

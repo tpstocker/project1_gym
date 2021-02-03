@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-{% for booking in bookings %}
-
-<a href="bookings/{{booking.id}}"><h1>Booking ID: {{booking.id}}</h1></a>
-    <p>Member Name: {{booking.member.first_name}} {{booking.member.second_name}}</p>
-    <p>Activity: {{booking.activity.name}}</p>
-    <p>Instructor Name: {{booking.instructor.first_name}} {{booking.instructor.second_name}}</p>
-    <p>Location: {{booking.location.name}}</p>
-
-{% endfor %}
-
-
-
-<h2><a href="/bookings/new">New booking</a></h2>
-<h2><a href="/bookings/edit">edit</a></h2>
+<div>
+    <h2 id="new_booking"><a href="/bookings/new">New booking</a></h2>
+</div>
+<h1 id="booking_title">Bookings</h1>
+<div id="overflow">
+    <div id="booking_container">
+        {% for booking in bookings %}
+            <p><a href="bookings/{{booking.id}}"><h1>Booking ID: {{booking.id}}</h1></a></p>
+            <p>Member: {{booking.member.first_name}} {{booking.member.second_name}}</p>
+            <p>Activity: {{booking.activity.name}}</p>
+            <p>Instructor: {{booking.instructor.first_name}} {{booking.instructor.second_name}}</p>
+            <p>Location: {{booking.location.name}}</p>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

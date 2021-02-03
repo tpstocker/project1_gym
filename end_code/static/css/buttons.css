@@ -1,0 +1,24 @@
+button {
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: goldenrod;
+}
+
+#delete_button:hover {
+    background-color: red;
+
+}
+
+#delete_button {
+    margin-left: 100px;
+}
+
+#subdel {
+    display: flex;
+    margin-top: 10px;
+}

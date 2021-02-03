@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div id="new_member_form"> 
 <form action="/members" method="post">
     <div>
         <label for="first_name">First Name</label>
@@ -20,8 +20,8 @@
         <input type="text" id="contact_number" name="contact_number" placeholder="Contact Number" required>
     </div>
     <div>
-        <label for="email_address">Email Address</label>
-        <input type="text" id="email_address" name="email_address" placeholder="Email" required>
+        <label for="email_address">email</label>
+        <input type="text" id="email_address" name="email_address" placeholder="Email" required style="text-transform:lowercase">
     </div>
     <div>
         <label for="experience">Experience Level</label>
@@ -48,5 +48,6 @@
 
     <button type="submit">Add Member</button>
 </form>
+</div>
 
 {% endblock %}

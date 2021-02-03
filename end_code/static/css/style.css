@@ -4,6 +4,7 @@ html {
 
 body {
     background-image: url('/static/images/main.jpg');
+    background-attachment: fixed;
     background-size:100%;
     background-repeat: repeat;
     padding: 0px;
@@ -47,8 +48,8 @@ a:link, a:visited, a:active {
 }
 
 #intro_choice li a:hover {
-    color: #525252;
     font-size: larger;
+    color: goldenrod;    
 }
 
 #nav_menu {
@@ -60,6 +61,64 @@ a:link, a:visited, a:active {
     padding-top: 1%;
     padding-bottom: 1%;
     font-size: 0.8em;
+}
+
+#member_container, #booking_container {
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    float: right;
+    padding-right: 30%;
+
+}
+
+#member_container a:hover {
+    font-size: larger;
+    color: goldenrod;    
+}
+
+#booking_container a:hover {
+    font-size: larger;
+    color: goldenrod;    
+}
+
+#overflow {
+    height: 410px;
+    overflow: scroll;
+}
+
+#member_title, #booking_title {
+    text-align: right;
+    padding-right: 31.35%;
+}
+
+#new_member, #new_booking {
+    font-size: 2em;
+    text-align: right;
+    padding-right: 3%;
+}
+
+#new_booking a:hover {
+    font-size: larger;
+    color: goldenrod;
+}
+
+#new_member a:hover {
+    font-size: larger;
+    color: goldenrod;
+}
 
 
+#new_member_form, #edit_member_form {
+    display: flex;
+    float: right;
+    padding-right: 350px;
+    padding-top: 40px;
+}
+
+#show {
+    color: #525252;
+    text-align: right;
+    padding-right: 31.35%;
+    padding-top: 7%;
 }

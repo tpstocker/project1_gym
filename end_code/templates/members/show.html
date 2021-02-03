@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <p>Name: {{member.first_name}}  {{member.second_name}}</p>
-        <p>Date of Birth: {{member.date_of_birth}}</p>
-        <p>Contact Number: {{member.contact_number}}</p>
-        <p>Email: {{member.email_address}}</p>
-        <p>Experience: {{member.experience}}</p>
-        <p>Membership Level: {{member.membership_level}}</p>
-        <p>Active Status: {{member.active_status}}</p>
-
-
+    <div id="show">
+        <h2>{{member.first_name}}  {{member.second_name}}</h2>
+        <br>
+        <p>Date of Birth:&nbsp {{member.date_of_birth}}</p>
+        <p>Contact Number:&nbsp {{member.contact_number}}</p>
+        <p>email:&nbsp {{member.email_address}}</p>
+        <p>Experience:&nbsp {{member.experience}}</p>
+        <p>Membership Level:&nbsp <span style="text-transform: capitalize;">{{member.membership_level}}</span></p>
+        <p>Active Status:&nbsp {{member.active_status}}</p>
+        <br>
         <form action="/members/{{member.id}}/edit">
             <button type="submit">Edit</button>
         </form>
-
+    </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div id="edit_member_form">
 <form action="/members/{{member.id}}" method="post">
     <div>
         <label for="first_name">First Name</label>
@@ -20,8 +20,8 @@
         <input type="text" id="contact_number" value="{{member.contact_number}}" name="contact_number" placeholder="contact_number" required>
     </div>
     <div>
-        <label for="email_address">Email Address</label>
-        <input type="text" id="email_address" value="{{member.email_address}}" name="email_address" placeholder="email_address" required>
+        <label for="email_address">email</label>
+        <input type="text" id="email_address" value="{{member.email_address}}" name="email_address" placeholder="email_address" required style="text-transform:lowercase">
     </div>
     <div>
         <label for="experience">Experience Level</label>
@@ -45,14 +45,15 @@
             <option value="false" {% if member.active_status == 'false' %} selected="selected" {% endif %}>False</option>
         </select>  
     </div>
-
-
+    <div id="subdel">
     <button type="submit">Submit Edit</button>
-</form>
+    </form>
 
-<form action="/members/{{member.id}}/delete">
-    <button type="submit">Delete Member</button>
-</form>
+    <form action="/members/{{member.id}}/delete">
+        <button id="delete_button" type="submit">Delete Member</button>
+    </form>
+    </div>
+</div>
 
 
 
