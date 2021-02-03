@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+<div id="show">
     <div>
-        <p>Name: {{activity.name}}</p>
-        <p>Description: {{activity.description}}</p>
+        <h1>{{activity.name}}</h1>
+        <p>{{activity.description}}</p>
         <p>Duration: {{activity.duration}}</p>
         <p>Experience Level: {{activity.experience_level}}</p>
 
@@ -10,11 +11,13 @@
             <button type="submit">Edit</button>
         </form>
 
-        <h3>members with Booking</h3>
+        <h3>Members with Booking</h3>
         <ul>
             {% for member_with_booking in members_with_booking %}
             <li>{{ members_with_booking}}</li>
             {% endfor %}
         </ul>
+    </div>
+</div>
 
 {% endblock %}

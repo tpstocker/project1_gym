@@ -4,9 +4,9 @@
 <div>
   <h2 id="new_member"><a href="/members/new">New Member</a></h2>
 </div>
-<h1 id="member_title">Members</h1>
+<h1 id="list_title">Members</h1>
 <div id="overflow">
-  <div id="member_container">
+  <div id="list_container">
     {% for member in all_members %}
       <p><a href="members/{{member.id}}">{{member.first_name}}  {{member.second_name}}</a></p>
     {% endfor %}

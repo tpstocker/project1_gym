@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div id="edit_form">
 <form action="/locations/{{location.id}}" method="post">
     <div>
         <label for="name">Name</label>
@@ -22,14 +22,15 @@
             <option value="false" {% if location.accessible == 'false' %} selected="selected" {% endif %}>False</option>
         </select>  
     </div>
-
-
-    <button type="submit">Submit Edit</button>
+    <div id="subdel">
+        <button type="submit">Submit Edit</button>
 </form>
 
 <form action="/locations/{{location.id}}/delete">
-    <button type="submit">Delete Location</button>
-</form>
+    <button id="delete_button" type="submit">Delete Location</button>
+ </form>
+</div>
+
 
 
 {% endblock %}

@@ -2,11 +2,11 @@
 {% block content %}
 
 <div>
-    <h2 id="new_booking"><a href="/bookings/new">New booking</a></h2>
+    <h2 id="new_booking"><a href="/bookings/new">New Booking</a></h2>
 </div>
-<h1 id="booking_title">Bookings</h1>
+<h1 id="list_title">Bookings</h1>
 <div id="overflow">
-    <div id="booking_container">
+    <div id="list_container">
         {% for booking in bookings %}
             <p><a href="bookings/{{booking.id}}"><h1>Booking ID: {{booking.id}}</h1></a></p>
             <p>Member: {{booking.member.first_name}} {{booking.member.second_name}}</p>

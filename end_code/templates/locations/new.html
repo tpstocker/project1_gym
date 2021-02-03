@@ -1,28 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id="new_form"> 
+    <form action="/locations" method="post">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+        </div>
 
-<form action="/locations" method="post">
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
-    </div>
+        <div>
+            <label for="capacity">Capacity</label>
+            <input type="text" id="capacity" name="capacity" placeholder="Capacity" required>
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" placeholder="Description" required>
+        </div>
+        <div>
+            <label for="accessible">Accessible</label>
+            <input type="text" id="accessible" name="accessible" placeholder="Accessible" required>
+        </div>
 
-    <div>
-        <label for="capacity">Capacity</label>
-        <input type="text" id="capacity" name="capacity" placeholder="Capacity" required>
-    </div>
-    <div>
-    <div>
-        <label for="description">Description</label>
-        <input type="text" id="description" name="description" placeholder="Description" required>
-     </div>
-    <div>
-        <label for="accessible">Accessible</label>
-        <input type="text" id="accessible" name="accessible" placeholder="Accessible" required>
-    </div>
-
-    <button type="submit">Add Location</button>
-</form>
+        <button type="submit">Add Location</button>
+    </form>
+</div>
 
 {% endblock %}

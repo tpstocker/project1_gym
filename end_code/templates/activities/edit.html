@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div id="edit_form">
 <form action="/activities/{{activity.id}}" method="post">
     <div>
         <label for="name">Name</label>
-        <input type="text" id="name" value="{{activity.name}}" name="name" required autofocus>
+        <input type="text" id="name" value="{{activity.name}}" name="name" placeholder="Name" required autofocus>
     </div>
     <div>
         <label for="description">Description</label>
-        <input type="text" id="description" value="{{activity.description}}" name="description" placeholder="second_name" required>
+        <!-- <textarea id="description" value="{{activity.description}}" rows="20" cols="1"></textarea> -->
+        <input type="text" id="description" value="{{activity.description}}" name="description" placeholder="description">
     </div>
     <div>
         <label for="duration">Duration</label>
@@ -23,13 +24,12 @@
             <option value="3" {% if activity.experience_level == '3' %} selected="selected" {% endif %}>3</option>
         </select>
     </div>
-    
+    <div id="subdel">
+        <button type="submit">Submit Edit</button>
+        </form>
 
-    <button type="submit">Submit Edit</button>
-</form>
-
-<form action="/activities/{{activity.id}}/delete">
-    <button type="submit">Delete Activity</button>
-</form>
-
+    <form action="/activities/{{activity.id}}/delete">
+        <button id="delete_button" type="submit">Delete Activity</button>
+    </form>
+</div>
 {% endblock %}

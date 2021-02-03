@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div id="new_form">
 <form action="/activities" method="post">
     <div>
         <label for="name">Name</label>
@@ -23,8 +23,9 @@
             <option value="3">3</option>
         </select>
     </div>
-    
+
     <button type="submit">Add Activity</button>
 </form>
+</div>
 
 {% endblock %}

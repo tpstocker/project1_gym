@@ -1,20 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Contact Number</th>
-      <th>PHOTO HERE</th>
-    </tr>
-{% for instructor in all_instructors %}
-    <tr>
-      <th><a href="instructors/{{instructor.id}}">{{instructor.first_name}} {{instructor.contact_number}}</a></th>
-    </tr>
-{% endfor %}
-
-</table>
-
-<h2><a href="/instructors/new">Add New instructor</a></h2>
+<div>
+  <h2 id="new_instructor"><a href="/instructors/new">New Instructor</a></h2>
+</div>
+<h1 id="list_title">Instructors</h1>
+<div id="overflow">
+  <div id="list_container">
+    {% for instructor in all_instructors %}
+      <p><a href="instructors/{{instructor.id}}">{{instructor.first_name}} {{instructor.second_name}}</a></p>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
+

@@ -1,35 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<div id="new_form">
 <form action="/bookings/new" method="post">
-    <select id="member" name="member">
-        {% for member in members %}
-            <option value="{{member.id}}">{{ member.first_name }} {{ member.second_name }}</option>
-        {% endfor %}
-    </select>
+    <div>
+        <select id="member" name="member">
+            {% for member in members %}
+                <option value="{{member.id}}">{{ member.first_name }} {{ member.second_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <select id="activity" name="activity">
+            {% for activity in activities %}
+            <option value="{{activity.id}}">{{ activity.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <select id="instructor" name="instructor">
+            {% for instructor in instructors %}
+                <option value="{{instructor.id}}">{{ instructor.first_name }} {{ instructor.second_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <select id="location" name="location">
+            {% for location in locations %}
+                <option value="{{location.id}}">{{ location.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-    <select id="activity" name="activity">
-        {% for activity in activities %}
-        <option value="{{activity.id}}">{{ activity.name }}</option>
-        {% endfor %}
-    </select>
 
-    <select id="instructor" name="instructor">
-        {% for instructor in instructors %}
-            <option value="{{instructor.id}}">{{ instructor.first_name }} {{ instructor.second_name }}</option>
-        {% endfor %}
-    </select>
-    <select id="location" name="location">
-        {% for location in locations %}
-            <option value="{{location.id}}">{{ location.name }}</option>
-        {% endfor %}
-    </select>
-
-
-    <input type="submit" value="Add Booking"/>
-
-
+    <button type="submit" value="Add Booking">Add Booking</button>
 </form>
+</div>
 
 {% endblock %}

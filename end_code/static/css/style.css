@@ -63,7 +63,7 @@ a:link, a:visited, a:active {
     font-size: 0.8em;
 }
 
-#member_container, #booking_container {
+#list_container {
     display: flex;
     flex-shrink: 1;
     flex-direction: column;
@@ -72,44 +72,50 @@ a:link, a:visited, a:active {
 
 }
 
-#member_container a:hover {
+#list_container a:hover {
     font-size: larger;
     color: goldenrod;    
 }
 
-#booking_container a:hover {
-    font-size: larger;
-    color: goldenrod;    
-}
 
 #overflow {
     height: 410px;
     overflow: scroll;
 }
 
-#member_title, #booking_title {
+#list_title {
     text-align: right;
     padding-right: 31.35%;
 }
 
-#new_member, #new_booking {
+#new_member, #new_booking, #new_activity, #new_instructor, #new_location{
     font-size: 2em;
     text-align: right;
     padding-right: 3%;
 }
 
-#new_booking a:hover {
-    font-size: larger;
-    color: goldenrod;
-}
 
 #new_member a:hover {
     font-size: larger;
     color: goldenrod;
 }
 
+#new_activity a:hover {
+    font-size: larger;
+    color: goldenrod;
+}
 
-#new_member_form, #edit_member_form {
+#new_instructor a:hover {
+    font-size: larger;
+    color: goldenrod;
+}
+
+#new_location a:hover {
+    font-size: larger;
+    color: goldenrod;
+}
+
+#new_form, #edit_form {
     display: flex;
     float: right;
     padding-right: 350px;
@@ -120,5 +126,6 @@ a:link, a:visited, a:active {
     color: #525252;
     text-align: right;
     padding-right: 31.35%;
+    padding-left: 50%;
     padding-top: 7%;
 }

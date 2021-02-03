@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <table>
-    <tr>
-      <th>Activity</th>
+<div>
+  <h2 id="new_activity"><a href="/activities/new">New Activity</a></h2>
+</div>
+<h1 id="list_title">Activities</h1>
+<div id="overflow">
+  <div id="list_container">
+    {% for activity in all_activities %}
+      <p><a href="activities/{{activity.id}}">{{activity.name}}</a></p>
+    {% endfor %}
+  </div>
+</div>
 
-    </tr>
-{% for activity in all_activities %}
-    <tr>
-      <th><a href="activities/{{activity.id}}">{{activity.name}}</a></th>
-    </tr>
-{% endfor %}
 
-</table>
-
-<h2><a href="/activities/new">New Activity</a></h2>
 
 {% endblock %}
+
