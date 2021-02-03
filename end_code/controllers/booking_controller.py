@@ -15,6 +15,14 @@ def bookings():
     bookings = booking_repository.select_all()
     return render_template("bookings/index.html", bookings = bookings)
 
+# SHOW BOOKING - GET #
+@bookings_blueprint.route("/bookings/<id>", methods=['GET'])
+def show_booking(id):
+    booking = booking_repository.select(id)
+    member = member_repository.select_all()
+
+    return render_template('bookings/show.html', booking = booking, all_members = member)
+
 
 # NEW BOOKING - GET # 
 @bookings_blueprint.route("/bookings/new", methods=['GET'])
@@ -24,6 +32,7 @@ def new_activity():
     instructors = instructor_repository.select_all()
     locations = location_repository.select_all()
     return render_template("bookings/new.html", members=members, activities=activities, instructors=instructors, locations=locations)
+
 
 
 # CREATE
@@ -52,7 +61,7 @@ def edit_booking(id):
 
 
 # UPDATE
-@bookings_blueprint.route("/bookings/<id>", methods=["GET"])
+@bookings_blueprint.route("/bookings/<id>", methods=["POST"])
 def update_booking(id):
     edit_member = member_repository.select(request.form["member"])
     edit_activity = activity_repository.select(request.form["activity"])

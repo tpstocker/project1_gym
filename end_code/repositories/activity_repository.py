@@ -62,12 +62,15 @@ def delete(id):
 
 def select_members_with_booking(id):
     members_with_booking = []
+
     sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.activity_id = %s"
     values = [id]
     results = run_sql(sql, values)
-    for result in results:
-        member = member(result["first_name"]) #DO WE NEED MORE HERE#
+
+    for row in results:
+        member = Member(row['active_status'], row['membership_level'], row['experience'], row['email_address'], row['contact_number'])
         members_with_booking.append(member)
+
     return members_with_booking
 
 

@@ -63,3 +63,6 @@ def update_activity(id):
 def delete_activity(id):
     activity_repository.delete(id)
     return redirect('/activities')
+
+
+

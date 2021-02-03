@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        <p>Name: {{booking.activity_id}}
+<div id="show">
+    <h2>{{booking.activity.name}}</h2>
+    <br>
+    <p>Instructor: {{booking.instructor.first_name}} {{booking.instructor.second_name}}</p>
+    <p>Location: {{booking.location.name}}</p>
 
-        <form action="/bookings/{{booking.id}}/edit">
-            <button type="submit">Edit</button>
-        </form>
+
+     <form action="/bookings/{{booking.id}}/edit">
+        <button type="submit">Edit</button>
+    </form>
+</div>
 
 {% endblock %}
